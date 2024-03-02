@@ -25,11 +25,11 @@ const useData = <T>(
           signal: controller.signal,
           ...requestConfig,
         })
-        .then((res) => {
+        .then((res: any) => {
           setData(res.data.results);
           setIsLoading(false);
         })
-        .catch((err) => {
+        .catch((err: any) => {
           if (err instanceof CanceledError) return;
           setError(err.message);
         });
